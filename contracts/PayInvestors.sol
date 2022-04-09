@@ -10,7 +10,7 @@ contract PayInvestors {
 
     uint public liquidity;
     uint public alloted;
-    address immutable bankAdmin;
+    address immutable public bankAdmin;
     address payable[] investorWallets;
     mapping(address => uint) public investorsShare;
 
@@ -46,7 +46,7 @@ contract PayInvestors {
      * @param amount amount to allot to provided address
      */
     function allotInvestorPay(address payable wallet, uint amount) public onlyAdmin {
-        require(alloted + amount <= liquidity, "insuffifienct amount remaining");
+        require(alloted + amount <= liquidity, "insufficient amount remaining");
         investorWallets.push(wallet);
         investorsShare[wallet] = amount;
         alloted += amount;
@@ -62,8 +62,13 @@ contract PayInvestors {
         for(uint i = 0; i < payRoll.length; ++i) {
             uint share = investorsShare[investorWallets[i]];
             investorWallets[i].transfer(share);
-            liquidity = liquidity - share;
+            liquidity -= share;
         }
+    }
+
+
+    function getShare(address wallet) external view returns(uint256) {
+        return investorsShare[wallet];
     }
 
 }
