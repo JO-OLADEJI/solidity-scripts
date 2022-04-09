@@ -8,10 +8,10 @@ pragma solidity ^0.8.0;
  */
 contract Will {
 
-    address immutable owner;
-    uint fortune;
-    bool isDeceased;
-    address payable[] familyWallets;
+    address immutable public owner;
+    uint public fortune;
+    bool public isDeceased;
+    address payable[] public familyWallets;
     mapping(address => uint) inheritance;
 
     /**
@@ -68,6 +68,14 @@ contract Will {
     function hadDeceased() public onlyOwner {
         isDeceased = true;
         payout();
+    }
+
+
+    /**
+     * @dev function to retrun the inheritance of a given address
+     */
+    function getInheritance(address wallet) external view returns(uint256) {
+        return inheritance[wallet];
     }
 
 }
