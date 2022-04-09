@@ -15,7 +15,6 @@ contract SubCoin {
     address[] public holders;
     uint public totalSupply;
     uint public circulation;
-    error insufficientBalance(uint requested, uint balances);
 
 
     constructor() {
@@ -50,9 +49,7 @@ contract SubCoin {
      * @param amount number of tokens
      */
     function send(address to, uint amount) public {
-        if (amount > balances[msg.sender]) {
-            revert insufficientBalance(amount, balances[msg.sender]);
-        }
+        require(amount <= balances[msg.sender], 'insufficient balance!');
 
         // check if the receiver already holds tokens, otherwise add to holders
         if (balances[to] == 0) {
@@ -79,9 +76,7 @@ contract SubCoin {
      * @param amount number of tokens
      */
     function burn(uint amount) public {
-        if (amount > balances[msg.sender]) {
-            revert insufficientBalance(amount, balances[msg.sender]);
-        }
+        require(amount <= balances[msg.sender], 'insufficient balance!');
         balances[msg.sender] -= amount;
         circulation -= amount;
         totalSupply -= amount;
