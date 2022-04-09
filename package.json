@@ -1,0 +1,27 @@
+{
+  "name": "solidity-scripts",
+  "version": "1.0.0",
+  "description": "Solidity scripts for breakfast",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "deploy": "npx hardhat run scripts/deploy.js --network ganache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joshua-Oladeji/solidity-scripts.git"
+  },
+  "keywords": [
+    "solidity",
+    "smart-contracts"
+  ],
+  "author": "Joshua Oladeji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joshua-Oladeji/solidity-scripts/issues"
+  },
+  "homepage": "https://github.com/Joshua-Oladeji/solidity-scripts#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
+}

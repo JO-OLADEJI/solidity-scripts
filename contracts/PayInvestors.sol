@@ -42,7 +42,7 @@ contract PayInvestors {
 
     /**
      * @dev allot shares, out of the total liquidity, to investors
-     * @param address wallet address of investor
+     * @param wallet wallet address of investor
      * @param amount amount to allot to provided address
      */
     function allotInvestorPay(address payable wallet, uint amount) public onlyAdmin {

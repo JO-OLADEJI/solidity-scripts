@@ -1,6 +1,6 @@
 # Solidity Scripts
 
-These are smart-contracts written mostly as exercises for [this udemy course](https://www.udemy.com/share/104ZNG3@SN3Ss-PkJn0pRthwPTWuSL7WMoTKNcpNoRJHIa2Vu70khzBEeiye5gqnB7VGPR1-WQ==/) I'm taking. Other exercises and projects are also archived here. But basically, It's just me having **solidity** for breakfast 😋
+These are smart-contracts written mostly as exercises for [this udemy course](https://www.udemy.com/share/104ZNG3@SN3Ss-PkJn0pRthwPTWuSL7WMoTKNcpNoRJHIa2Vu70khzBEeiye5gqnB7VGPR1-WQ==/) and [this youtube course](https://www.youtube.com/watch?v=M576WGiDBdQ) I'm taking. Other exercises and projects are also archived here. But basically, It's just me having **solidity** for breakfast 😋
 <br />
 <br />
 
